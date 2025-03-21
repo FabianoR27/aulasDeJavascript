@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício - Sucesso</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>EXERCICIO</h1>
+    <main>
+
+        <input class="inputs" type="text" id="nome" placeholder="Nome">
+        <select name="Tipo" id="opcoes">
+            <option class="opcao" value="" selected disabled>Tipo</option>
+            <option class="opcao" value="pf">Pessoa Física</option>
+            <option class="opcao" value="pj">Pessoa Jurídica</option>
+        </select>
+        <button id="btnSelect">Próximo</button>
+        <p id="msgErroInicial"></p>
+
+
+        <div style="margin-top: 10px;" class="esconder" id="formularioPf">
+            <h1>Fisico</h1>
+            <input class="inputs" type="number" id="idade" placeholder="Idade">
+            <input class="inputs" type="text" id="cpf" placeholder="CPF">
+            <input class="inputs" type="text" id="rg" placeholder="RG">
+            <button id="botaoValidarFisico">Validar</button>
+        </div>
+
+
+        <div style="margin-top: 10px;" class="esconder" id="formularioPj">
+            <h1>Jurídico</h1>
+            <input class="inputs" type="text" id="razaoSocial" placeholder="Razão Social">
+            <input class="inputs" type="text" id="cnpj" placeholder="CNPJ">
+            <input class="inputs" type="text" id="ie" placeholder="Incrição Estadual">
+            <button id="botaoValidarJuridico">Validar</button>
+        </div>
+
+        <p id="mensagemAlerta"></p>
+        <p id="mensagemAlertaDois"></p>
+        <p id="mensagemAlertaTres"></p>
+        <p id="sucesso"></p>
+    </main>
+    <script src="exercicio.js"></script>
+</body>
+
+</html>

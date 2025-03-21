@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .esconder {
+            display: none !important;
+        }
+
+        .exibir {
+            display: block !important;
+        }
+
+        .msg-geral {
+            color: red;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 10px;
+            background-color: rgb(242, 216, 216);
+            padding: 5px;
+            border-radius: 3px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Aula 3 JavaScript</h1>
+    <p id="texto"></p>
+
+    <div class="msg-geral esconder"></div>
+
+    <p>Nome</p>
+    <input type="text" id="nome" name="nome">
+    <button id="btnValidar">Validar</button>
+    <p class="msg-nome"></p>
+    
+    <script src="script.js"></script>
+</body>
+</html>

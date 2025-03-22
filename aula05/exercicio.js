@@ -1,59 +1,58 @@
 // graus p/farenheit
-//botao
 document.getElementById('btnConverter').addEventListener('click', function () {
-    converterTemperatura()
+    document.getElementById('retorno').innerHTML = converterTemperatura() + '°F'
 })
 
 
-
-
-
+//maior numero
 document.getElementById('btnMaior').addEventListener('click', function () {
-    maiorNumero()
-})
-
-
-
-
-
-
-document.getElementById('btnCalcular').addEventListener('click', function () {
-    let valor = 
-})
-
-
-
-
-
-
-
-
-
-
-
-function converterTemperatura() {
-    let celcius = document.getElementById('inputGrau').value
-    let farenheit = celcius  * 1.8 + 32;
-    let retorno = document.getElementById('retorno')
-    retorno.textContent = farenheit + '°F'
-}
-
-
-
-function maiorNumero() {
     let n1 = document.getElementById('n1').value
     let n2 = document.getElementById('n2').value
     let n3 = document.getElementById('n3').value
-    let retorno2 = document.getElementById('retorno2')
+    document.getElementById('retorno2').innerHTML = maiorNumero(n1, n2, n3)
+})
 
+
+// calcular algo
+document.getElementById('btnCalcular').addEventListener('click', function () {
+    let valor = document.getElementById('valor').value
+    document.getElementById('retorno3').innerHTML = calcularAlgo(valor)
+})
+
+
+//funçao para converter graus para farenheit
+function converterTemperatura() {
+    let celcius = document.getElementById('inputGrau').value
+    return celcius * 1.8 + 32;
+}
+
+
+// função para retornar o maior número
+function maiorNumero(n1, n2, n3) {
     if (n1 > n2 && n1 > n3) {
-    retorno2.textContent = n1
-    return;
-} else if (n2 > n1 && n2 > n3) {
-    retorno2.textContent = n2
-    return;
-} else {
-    retorno2.textContent = n3
-    return;
+        return n1;
+    }
+    if (n2 > n1 && n2 > n3) {
+        return n2;
+    }
+    if (n3 > n1 && n3 > n2) {
+        return n3;
+    } if (n1 == n2 && n2 == n3) {
+        return 'Os números são iguais'
+    }
+    
+    //outra forma de fazer:
+    // return Math.max(n1, n2, n3) //Math.max() retorna o maior número
+}
+
+// função para calcular algo
+function calcularAlgo(valor) {
+    if (valor >= 500) {
+        return ((valor * 13.5) / 100).toFixed(2).replace('.',','); //toFixed() limita as casas decimais e replace() troca o ponto por vírgula
+    }
+    if (valor < 500) {
+        return ((valor * 9.98) / 100).toFixed(2).replace('.',','); //toFixed() limita as casas decimais e replace() troca o ponto por vírgula
+    } else {
+        return -1;
     }
 }

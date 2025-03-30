@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #coloredDiv {
+            width: 220px;
+            height: 220px;
+            border: solid 1px black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>3. Alterar Atributos de Estilo</h1>
+    <h2>Desafio: Crie um botão que, ao ser clicado, altere a cor de fundo de um <div> para uma cor aleatória.</h2>
+    <div id="coloredDiv"></div>
+    <button id="changeColorButton">Mude a cor</button>
+
+    <script>
+        const coloredDiv = document.getElementById('coloredDiv');
+        const changeColorButton = document.getElementById('changeColorButton');
+        const colors = ['red', 'blue', 'green', 'yellow', 'purple', 'orange', 'pink', 'aliceblue', 'black', 'white']
+
+        // math.random() gera um número aleatório entre 0 e 1
+        // math.floor() arredonda o número para baixo
+        // math.random() * colors.length gera um número aleatório entre 0 e o tamanho do array colors
+        changeColorButton.addEventListener('click', function () {
+            const randomColor = colors[Math.floor(Math.random() * colors.length)]; // gera um número aleatório entre 0 e o tamanho do array colors
+            coloredDiv.style.backgroundColor = randomColor; // altera a cor de fundo do div para a cor aleatória gerada
+            console.log(randomColor)
+        })
+    </script>
+</body>
+
+</html>

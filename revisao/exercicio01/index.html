@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>EXERCÍCIO 01 - DOM </h1>
+    <H2> Crie uma página HTML com um botão. Ao clicar nele, adicione um novo parágrafo ao final da página com um texto aleatório.</H2>
+    <p id="texto">clique no botão abaixo para criar um novo paragrafo</p>
+
+    <button id="botao">clique aqui</button>
+    <div id="novoElemento"></div>
+
+
+
+    <script>
+        document.getElementById('botao').addEventListener('click', function () {
+            document.getElementById('novoElemento').appendChild(document.createElement('p')).innerHTML = 'Novo paragrafo'
+        }) // appendChild adiciona um novo elemento filho ao elemento pai
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>EXERCÍCIO 02 - CAPTURA DE ELEMENTOS</h1>
+    <h2>Capture um campo de input e um botão. Quando o usuário digitar um texto no input e clicar no botão, exiba o valor digitado no console.</h2>
+
+    <input type="text" id="campo" placeholder="Digite algo">
+    <button id="botao">Clique aqui</button>
+    <p id="textoDoInput"></p>
+
+    <script>
+        const campo = document.getElementById('campo');
+        const botao = document.getElementById('botao');
+        const textoDoInput= document.getElementById('textoDoInput');
+
+        botao .addEventListener('click', function() {
+            console.log(campo.value)
+        })
+
+    </script>
+</body>
+</html>

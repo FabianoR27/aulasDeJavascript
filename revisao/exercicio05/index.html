@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            transition: background 0.3s, color 0.3s;
+        }
+        .dark-mode {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>5. Adicionar ou Remover Classes CSS</h1>
+    <h2>Desafio: Crie um botão que alterne entre os temas "claro" e "escuro" de uma <div> ao ser clicado, utilizando classes CSS para definir os estilos.</h2>
+    
+    <p>Clique no botão para alternar entre modo claro e escuro</p>
+
+    <button id="botao" data-theme="light">Modo Escuro</button>
+
+    <script>
+        const button = document.getElementById('botao');
+
+        button.addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode'); // adiciona ou remove a classe
+
+            if (document.body.classList.contains('dark-mode')) {
+                button.textContent = 'Modo Claro';
+                button.dataset.theme = "dark"; // Agora o botão tem data-theme="dark"
+                
+            } else {
+                button.textContent = 'Modo Escuro';
+                button.dataset.theme = "light"; // Agora o botão tem data-theme="dark"
+            }
+        });
+    </script>
+</body>
+</html>

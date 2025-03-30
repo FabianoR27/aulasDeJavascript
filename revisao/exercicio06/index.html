@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>6. Inserir ou Modificar Textos no HTML</h1>
+    <h2>Desafio: Crie um contador numérico na tela. Dois botões devem aumentar e diminuir o número ao serem clicados.</h2>
+
+    <p id="contador">0</p>
+    <button id="diminuir">-</button>
+    <button id="reset">Reset</button>
+    <button id="aumentar">+</button>
+
+    
+    <script>
+        let divContador = document.getElementById('contador')
+        let botaoDiminuir = document.getElementById('diminuir')
+        let botaoAumentar = document.getElementById('aumentar')
+        let botaoReset = document.getElementById('reset')
+        let contador = 0
+
+        botaoDiminuir.addEventListener('click', function() {
+            contador --
+            divContador.innerHTML = contador
+        })
+
+        botaoAumentar.addEventListener('click', function() {
+            contador ++
+            divContador.innerHTML = contador
+        })
+
+        botaoReset.addEventListener('click', function() {
+            contador = 0
+            divContador.innerHTML = contador
+        })
+    </script>
+</body>
+</html>

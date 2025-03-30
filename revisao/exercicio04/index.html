@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>4. Ferramentas de Debug</h1>
+    <h2>Desafio: Escreva um código que gere um erro propositalmente e utilize console.log(), console.warn() e console.error() para mostrar mensagens de depuração.</h2>
+    <script>
+        // Gera um erro propositalmente
+        try {
+            throw new Error("Este é um erro proposital!");
+        } catch (error) {
+            console.error("Erro capturado:", error.message); // Mostra o erro no console como um erro
+        }
+
+        console.log("Esta é uma mensagem de log."); // Mensagem de log normal
+        console.warn("Esta é uma mensagem de aviso."); // Mensagem de aviso
+        </script>
+    <p>Abra o console do navegador para ver as mensagens de depuração.</p>
+</body>
+</html>

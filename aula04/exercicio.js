@@ -41,16 +41,19 @@ botaoSelect.addEventListener('click', function () {
     let opcao = document.getElementById('opcoes');
     let formPf = document.getElementById('formularioPf');
     let formPj = document.getElementById('formularioPj');
-    inputNomeFulano = inputNome;
     msgNomeOuRazaoSocial = msgErroNome;
+    inputNomeFulano = inputNome;
+    inputNomeFulano.style.backgroundColor = "green";
 
-    if (inputNomeFulano.value == "" || inputNomeFulano.length < 3 || !inputNomeFulano.value.includes(' ')) {
-        inputNomeFulano.style.border = "solid 1px red";
-        inputNomeFulano.style.backgroundColor = "red";
+    if (inputNomeFulano.value == "" || inputNomeFulano.value.length < 3 || !inputNomeFulano.value.includes(' ')) {
+        inputNomeFulano.style.border = "solid 1px tomato";
+        inputNomeFulano.style.backgroundColor = "tomato";
         mensagemAlerta.textContent = msgNomeOuRazaoSocial
         mensagemAlerta.classList.remove('sucesso');
         return;
-    }
+    } 
+     // o validarNome() não está está sendo chamado,ainda não sei porquê.
+    //era pra passar para a proxima validação somente se o input associano ao validarNome() recebesse algum valor diferente de vazio 
 
     if (opcao.value === '') {
         mensagemAlerta.textContent = "Selecione \"Pessoa Física\" ou \"Pessoa Jurídica\" irmão. "
@@ -71,6 +74,7 @@ botaoSelect.addEventListener('click', function () {
         mensagemAlerta.textContent = "";
         mensagemAlerta2.textContent = "";
         mensagemAlerta3.textContent = "";
+
     } else if (opcao.value === 'pj') {
         formPj.classList.remove('esconder');
         formPj.classList.add('exibir');
@@ -83,6 +87,7 @@ botaoSelect.addEventListener('click', function () {
         msgNomeOuRazaoSocial = msgErroRazaoSocial;
         msgCpfOuCnpj = msgErroCnpj;
         msgRgOuIe = msgErroIe;
+        inputNomeFulano = inputRazaoSocial;
         mensagemAlerta.textContent = "";
         mensagemAlerta2.textContent = "";
         mensagemAlerta3.textContent = "";
@@ -109,6 +114,10 @@ botaoValidarFisico.addEventListener('click', function () {
 })
 
 botaoValidarCnpj.addEventListener('click', function () {
+    inputNomeFulano.style.backgroundColor = "green";
+    mensagemAlerta.textContent = "";
+        mensagemAlerta2.textContent = "";
+        mensagemAlerta3.textContent = "";
     //Validação do campo nome
     validarNome();
 
@@ -127,26 +136,27 @@ botaoValidarCnpj.addEventListener('click', function () {
 })
 
 function validarNome() {
-    if (inputNomeFulano.value == "" || inputNomeFulano.length < 3 || !inputNomeFulano.value.includes(' ')) {
-        inputNomeFulano.style.border = "solid 1px red";
-        inputNomeFulano.style.backgroundColor = "red";
+    if (inputNomeFulano.value == "" || inputNomeFulano.value.length < 3 || !inputNomeFulano.value.includes(' ')) {
+        inputNomeFulano.style.border = "solid 1px tomato";
+        inputNomeFulano.style.backgroundColor = "tomato";
         mensagemAlerta.textContent = msgNomeOuRazaoSocial
         mensagemAlerta.classList.remove('sucesso');
-
         return;
     }
 }
 
 function validarIdade() {
     if (inputOne.value == "" || inputOne.value < 18 || inputOne.value > 60) {
-        inputOne.style.border = "solid 1px red";
-        inputOne.style.backgroundColor = "red";
+        inputOne.style.border = "solid 1px tomato";
+        inputOne.style.backgroundColor = "tomato";
         mensagemAlerta.innerHTML = 'Preencha o campo idade corretamente';
     } else {
         inputOne.style.backgroundColor = "green";
         inputOne.style.color = "white";
         inputOne.style.border = "solid 1px black";
         mensagemAlerta.innerHTML = "";
+        mensagemAlerta3.innerHTML = "";
+        
     }
 }
 
@@ -165,8 +175,8 @@ function removerCaracterEspeciaisRgIe(){
 
 function validarCpfCnpj(){
     if (cpfOuCnpj == "" || cpfOuCnpj.length != digitos) {
-        inputTwo.style.border = "solid 1px red";
-        inputTwo.style.backgroundColor = "red";
+        inputTwo.style.border = "solid 1px tomato";
+        inputTwo.style.backgroundColor = "tomato";
         // Adiciona uma mensagem de erro ao array
         mensagemAlerta2.innerHTML = msgCpfOuCnpj;
     } else {
@@ -179,8 +189,8 @@ function validarCpfCnpj(){
 
 function validarRgIe(){
     if (rgOuIe == "" || rgOuIe.length != 9) {
-        inputThree.style.border = "solid 1px red";
-        inputThree.style.backgroundColor = "red";
+        inputThree.style.border = "solid 1px tomato";
+        inputThree.style.backgroundColor = "tomato";
         // Adiciona uma mensagem de erro ao array
         mensagemAlerta3.innerHTML = msgRgOuIe;
     } else {

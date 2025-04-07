@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Avaliação JavaScript</h1>
+    <main id="main">
+        <h1>Cadastro de Conta Bancária</h1>
+        <h2>Selecione o tipo de conta:</h2>
+
+        <select name="Tipo" id="opcoes">
+            <option class="opcao" value="" selected disabled>Selecione</option>
+            <option class="opcao" value="cc">Conta Corrente</option>
+            <option class="opcao" value="cp">Conta Poupança</option>
+            <option class="opcao" value="cs">Conta Salário</option>
+        </select>
+        <button id="btnSelect">Próximo</button>
+        <p id="msgInicio"></p>
+
+        <div style="margin-top: 10px;" class="esconder" id="formContaCorrente">
+            <h1>Cadastre sua Conta Corrente</h1>
+            <input class="inputNome" type="text" id="nomeContaCorrente" placeholder="Nome Completo">
+            <input class="inputCpf" type="text" id="cpfContaCorrente" placeholder="CPF">
+            <input class="inputSaldo" type="text" id="saldoContaCorrente" placeholder="Saldo inicial">
+            <input type="text" id="limiteContaCorrente" placeholder="Limite de crédito">
+            <button id="btnValidarContaCorrente">Validar</button>
+
+            <p class="mensagemAlerta"></p>
+        </div>
+
+        <div style="margin-top: 10px;" class="esconder" id="formContaPoupanca">
+            <h1>Cadastre sua Conta Poupança</h1>
+            <input class="inputNome" type="text" id="nomeContaPoupanca" placeholder="Nome Completo">
+            <input class="inputCpf"  type="text" id="cpfContaPoupanca" placeholder="CPF">
+            <input class="inputSaldo" type="text" id="saldoContaPoupanca" placeholder="Saldo inicial">
+            <button id="btnValidarContaPoupanca">Validar</button>
+        </div>
+
+        <div style="margin-top: 10px;" class="esconder" id="formContaSalario">
+            <h1>Cadastre sua Conta Salário</h1>
+            <input class="inputNome" type="text" id="nomeContaSalario" placeholder="Nome Completo">
+            <input type="text" id="nomeEmpresa" placeholder="Nome da empresa">
+            <input class="inputCpf" type="text" id="cpfContaSalario" placeholder="CPF">
+            <input class="inputSaldo"  type="text" id="saldoContaSalario" placeholder="Saldo inicial">
+            <button id="btnValidarContaSalario">Validar</button>
+        </div>
+
+        <p id="mensagemAlerta"></p>
+        <p id="mensagemAlerta2"></p>
+        <p id="mensagemAlerta3"></p>
+        <p id="mensagemAlerta4"></p>
+        <p id="mensagemAlerta5"></p>
+
+
+
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

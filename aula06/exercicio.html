@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <h1>Exercício - Tabela de Produtos</h1>
+
+        <input type="number" id="idProduto" placeholder="ID do Produto">
+        <input type="text" id="descricaoProduto" placeholder="Descrição">
+        <select name="valores" id="valores">
+            <option value="" selected disabled>Valores</option>
+            <option value="valor1">100,00</option>
+            <option value="valor2">130,00</option>
+            <option value="valor3">150,00</option>
+        </select>
+        <select name="categorias" id="categorias">
+            <option value="" selected disabled>Categoria</option>
+            <option value="bebidas">Bebidas</option>
+            <option value="mercearia">Mercearia</option>
+        </select>
+
+        <button id="btnGravar">Gravar</button>
+
+        <p id="mensagemAlerta"></p>
+        <div id="resultado" class="esconder">
+            <h2>Tabela de Produtos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Descrição</th>
+                        <th>Valores</th>
+                        <th>Categoria</th>
+                    </tr>
+                </thead>
+
+                <tbody id="produtosGravados"></tbody>
+            </table>
+        </div>
+    </main>
+
+    <script>
+        var inputId = document.getElementById('idProduto');
+        var inputDescricao = document.getElementById('descricaoProduto');
+        var valores = document.getElementById('valores');
+        var categorias = document.getElementById('categorias');
+        var produtos = {};
+        var btnGravar = document.getElementById('btnGravar')
+        var resultado = document.getElementById('resultado');
+        var produtosGravados = document.getElementById('produtosGravados');
+        //agora preciso fazer um comando para gravar e exibir os dados em uma tabela
+        btnGravar.addEventListener('click', function () {
+            let mensagemAlerta = document.getElementById('mensagemAlerta');
+            produtos.id = inputId.value;
+            produtos.descricao = inputDescricao.value;
+            produtos.valor = valores.options[valores.selectedIndex].text; //pega o valor do select
+            // options pega todos os valores do select
+            // selectedIndex pega o valor que foi selecionado e text pega o texto do valor selecionado
+            produtos.categoria = categorias.options[categorias.selectedIndex].text; //pega o  valor do select
+            if (produtos.id == '' || produtos.descricao == '') {
+                mensagemAlerta.innerHTML = 'Preencha todos os campos!';
+            } else {
+                mensagemAlerta.innerHTML = 'Produto adicionado com sucesso!';
+                resultado.classList.remove('esconder');
+                produtosGravados.innerHTML += exibirResultado(); // o '+=' serve para adicionar um resultado embaixo do outro, sem sobreescrever o anterior
+                //produtosGravados.insertAdjacentHTML("beforeend",exibirResultado()); //outra forma de fazer o mesmo comando acima
+                
+            }
+        })
+
+
+        function exibirResultado() {
+            return `
+                    <tr>
+                        <td>${produtos.id}</td>
+                        <td>${produtos.descricao}</td>
+                        <td>${produtos.valor}</td>
+                        <td>${produtos.categoria}</td>
+                    </tr>
+                    `;
+        }
+
+    </script>
+</body>
+
+</html>

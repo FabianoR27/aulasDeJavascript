@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 11 - AJAX</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main>
+        <h1>Consulta de CEP</h1>
+        <div>
+            <input type="number" name="cep" placeholder="insira o cep" id="inputCep">
+            <button id="botao">Consultar CEP</button>
+        </div>
+        <p id="endereco"></p>
+        
+        <div class="esconder" id="divCampos">
+            <label for="logradouro">Endereço</label>
+            <input type="text" id="logradouro" disabled placeholder="Endereço">
+            <label for="bairro">Bairro</label>
+            <input type="text" id="bairro" disabled placeholder="Bairro">
+            <label for="cidade">Cidade</label>
+            <input type="text" id="cidade" disabled placeholder="Cidade">
+            <label for="estado">Estado</label>
+            <input type="text" id="estado" disabled placeholder="Estado">
+            <button id="limpar">Limpar</button>
+        </div>
+        
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
